@@ -1,21 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import UsersList from "./components/UsersList";
+import axios from "axios";
+
+async function getUsers() {
+  const response = await axios.get(
+    "https://jsonplaceholder.typicode.com/users"
+  );
+
+  return response.data;
+}
 
 function App() {
-  const [users, setUsers] = useState([
-    {
-      name: "Leanne Graham",
-      username: "Bret",
-      email: "Sincere@april.biz",
-      phone: "1-770-736-8031 x56442",
-      address: {
-        street: "Kulas Light",
-        suite: "Apt. 556",
-        city: "Gwenborough",
-      },
-    },
-  ]);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    getUsers().then((users) => {
+      setUsers((prev) => [...prev, ...users]);
+    });
+  }, []);
 
   return (
     <main className="app">
