@@ -1,0 +1,22 @@
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user_card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: rgb(21, 21, 21);
+}
+
+.user_card p:first-child {
+  font-weight: bold;
+  font-size: 1.25em;
+}
