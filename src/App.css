@@ -7,6 +7,12 @@
   gap: 16px;
 }
 
+.users_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .user_card {
   display: flex;
   flex-direction: column;
@@ -19,4 +25,13 @@
 .user_card p:first-child {
   font-weight: bold;
   font-size: 1.25em;
+}
+
+.user_card p span {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 4px;
+  border-radius: 4px;
+  color: black;
+  background-color: rgb(211, 117, 117);
 }
